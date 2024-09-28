@@ -58,8 +58,8 @@
         //│  LSHFT   │  A       │  S       │  D       │  F       │   │  H       │  J       │  K       │  L       │ ' "      │
             &kp LSHFT  &kp A      &kp S      &kp D      &kp F          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  RCTRL   │  Z       │  X       │  C       │  V       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp RCTRL  &kp Z      &kp X      &kp C      &kp V          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+        //│  RCTRL   │  Z       │  X       │  C       │  V       │   │  BT_CLR  │  M       │  , <     │  . >     │  / ?     │
+            &kp RCTRL  &kp Z      &kp X      &kp C      &kp V          &bt BT_CLR &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp LALT   &kp SPACE      &tog 1     &tog 0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
