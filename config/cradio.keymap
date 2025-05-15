@@ -81,7 +81,7 @@
         awsd {
             label = "AWSD";
             bindings = <
-                &kp TAB    &kp Q  &kp W  &kp E  &kp R    &none  &none  &none  &none  &none
+                &kp TAB    &kp Q  &kp W  &kp E  &kp R    &none  &none  &none  &none  &bt BT_CLR_ALL
                 &kp LSHFT  &kp A  &kp S  &kp D  &kp F    &none  &none  &none  &none  &none
                 &kp LCTRL  &kp Z  &kp X  &kp C  &kp V    &none  &none  &none  &none  &none
                 &lt AWSD_NUM ESC  &kp SPACE              &mo BASE  &none
