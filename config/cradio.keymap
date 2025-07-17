@@ -12,6 +12,7 @@
 #define FNS 4
 #define AWSD 5
 #define AWSD_NUM 6
+#define COLE 7
 
 / {
     behaviors {
@@ -44,7 +45,17 @@
                 &kp TAB  &none  &none  &none  &none    &none  &none     &kp END    &kp HOME   &none
                 &none    &none  &none  &none  &none    &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
                 &none    &none  &none  &none  &none    &none  &none     &kp PG_DN  &kp PG_UP  &none
-                &trans  &to AWSD                       &none  &none
+                &to COLE  &to AWSD                       &none  &none
+            >;
+        };
+
+        cole {
+            label = "COLEMAK-DH";
+            bindings = <
+                &kp Q  &kp W  &kp F  &kp P  &kp B    &kp J  &kp L  &kp U      &kp Y    &kp SEMI
+                &kp A  &kp R  &kp S  &kp T  &kp G    &kp M  &kp N  &kp E      &kp I    &kp O
+                &kp Z  &kp X  &kp C  &kp D  &kp V    &kp K  &kp H  &kp COMMA  &kp DOT  &kp FSLH
+                &none  &kp SPACE                   &mt LSHFT ESC  &to BASE
             >;
         };
 
