@@ -44,8 +44,8 @@
             bindings = <
                 &kp TAB  &none  &none  &none  &none    &none  &none     &kp END    &kp HOME   &none
                 &none    &none  &none  &none  &none    &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &none    &none  &none  &none  &none    &none  &none     &kp PG_DN  &kp PG_UP  &none
-                &to COLE  &to AWSD                       &none  &none
+                &to COLE &none  &none  &none  &none    &none  &none     &kp PG_DN  &kp PG_UP  &none
+                &none  &to AWSD                       &none  &none
             >;
         };
 
@@ -55,7 +55,7 @@
                 &kp Q  &kp W  &kp F  &kp P  &kp B    &kp J  &kp L  &kp U      &kp Y    &kp SEMI
                 &kp A  &kp R  &kp S  &kp T  &kp G    &kp M  &kp N  &kp E      &kp I    &kp O
                 &kp Z  &kp X  &kp C  &kp D  &kp V    &kp K  &kp H  &kp COMMA  &kp DOT  &kp FSLH
-                &none  &kp SPACE                   &mt LSHFT ESC  &to BASE
+                &none  &kp SPACE                     &mt LSHFT ESC  &to BASE
             >;
         };
 
