@@ -11,8 +11,7 @@
 #define AWSD 6
 #define AWSD_E 7
 
-&mt {
-    flavor = "tap-preferred";
+&lt {
     tapping-term-ms = <150>;
 };
 
@@ -36,20 +35,18 @@
     };
 
     behaviors {
+      
     };
 
     keymap {
         compatible = "zmk,keymap";
-
-        //caps words to shift?
-        //end, zero to the front
 
         base {
             bindings = <
                 &kp Q  &kp W  &kp F  &kp P  &kp B    &kp J  &kp L  &kp U    &kp Y      &kp Z
                 &kp A  &kp R  &kp S  &kp T  &kp G    &kp M  &kp N  &kp E    &kp I      &kp O
                 &none  &kp X  &kp C  &kp D  &kp V    &kp K  &kp H  &kp DOT  &kp COMMA  &none
-                &mo EXT  &kp SPACE                   &mt LSHFT ESC  &mo SYM
+                &mo EXT  &kp SPACE                   &lt NUM ESC  &mo SYM
             >;
         };
 
@@ -64,27 +61,27 @@
 
         ext {
             bindings = <
-                &kp LS(TAB)  &kp LC(TAB)  &kp LG(LC(L)) &kp LG(LC(O))  &none    &none    &kp DEL   &kp BSPC   &kp RET    &kp TAB
-                &sk LSHFT    &sk LCTRL    &sk LCMD      &sk LALT       &none    &none    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &none        &none        &none         &none          &none    &kp END  &kp HOME  &kp PG_DN  &kp PG_UP  &none
-                &trans  &none                                                   &none  &none
+                &kp LS(TAB)  &kp LC(TAB)  &kp LG(LC(L)) &kp LG(LC(O))  &none         &none    &kp DEL   &kp BSPC   &kp RET    &kp TAB
+                &sk LSHFT    &sk LCTRL    &sk LCMD      &sk LALT       &caps_word    &none    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+                &none        &none        &none         &none          &none         &kp END  &kp HOME  &kp PG_DN  &kp PG_UP  &none
+                &trans  &none                                                        &none  &none
             >;
         };
 
         num {
             bindings = <
-                &none      &none      &none     &none     &none    &kp STAR  &kp N4  &kp N5  &kp N6  &kp PLUS
-                &kp LSHFT  &kp LCTRL  &kp LCMD  &kp LALT  &none    &kp FSLH  &kp N1  &kp N2  &kp N3  &kp MINUS
-                &none      &none      &none     &none     &none    &kp N0    &kp N7  &kp N8  &kp N9  &none
-                &none  &trans                                      &trans  &none
+                &none      &none      &kp MINUS  &kp PLUS  &none      &none   &kp N4  &kp N5  &kp N6  &none
+                &kp LSHFT  &kp LCTRL  &kp LCMD   &kp LALT  &kp DOT    &kp N0  &kp N1  &kp N2  &kp N3  &none
+                &none      &none      &kp FSLH   &kp STAR  &none      &none   &kp N7  &kp N8  &kp N9  &none
+                &none  &trans                                         &trans  &none
             >;
         };
 
         fns {
             bindings = <
                 &mo FNS_E  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_BRI_UP    &kp F10  &kp F4  &kp F5  &kp F6  &kp PSCRN
-                &kp LSHFT  &kp LCTRL     &kp LCMD      &kp LALT    &kp C_BRI_DN    &kp F11  &kp F1  &kp F2  &kp F3  &kp none
-                &none      &kp C_PREV    &kp C_NEXT    &kp C_PP    &none           &kp F12  &kp F7  &kp F8  &kp F9  &kp none
+                &kp LSHFT  &kp LCTRL     &kp LCMD      &kp LALT    &kp C_BRI_DN    &kp F11  &kp F1  &kp F2  &kp F3  &none
+                &none      &kp C_PREV    &kp C_NEXT    &kp C_PP    &none           &kp F12  &kp F7  &kp F8  &kp F9  &none
                 &none  &none                                                       &none  &none
             >;
         };
