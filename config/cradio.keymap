@@ -53,7 +53,14 @@
             >;
         };
 
- 
+        sym {
+            bindings = <
+                &kp TILDE  &kp RPAR  &kp RBRC  &kp RBKT  &kp CARET    &kp STAR  &kp GRAVE  &kp SQT    &kp DQT    &kp PLUS
+                &kp PRCNT  &kp LPAR  &kp LBRC  &kp LBKT  &kp PIPE     &kp FSLH  &kp EQUAL  &kp UNDER  &kp COLON  &kp MINUS
+                &none      &kp AMPS  &kp AT    &kp HASH  &kp DLLR     &kp BSLH  &kp QMARK  &kp EXCL   &kp SEMI   &none
+                &none  &trans                                         &none  &trans
+            >;
+        };
 
         ext {
             bindings = <
@@ -75,10 +82,10 @@
 
         fns {
             bindings = <
-                &mo FNS_E  &kp VOL_DN  &kp VOL_UP  &kp MUTE  &kp C_BRI_UP    &kp F10  &kp F4  &kp F5  &kp F6  &kp PSCRN
-                &kp LSHFT  &kp LCTRL   &kp LCMD    &kp LALT  &kp C_BRI_DN    &kp F11  &kp F1  &kp F2  &kp F3  &kp none
-                &none      &kp C_PREV  &kp C_NEXT  &kp C_PP  &none           &kp F12  &kp F7  &kp F8  &kp F9  &kp none
-                &none  &none                                                 &none  &none
+                &mo FNS_E  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_BRI_UP    &kp F10  &kp F4  &kp F5  &kp F6  &kp PSCRN
+                &kp LSHFT  &kp LCTRL     &kp LCMD      &kp LALT    &kp C_BRI_DN    &kp F11  &kp F1  &kp F2  &kp F3  &kp none
+                &none      &kp C_PREV    &kp C_NEXT    &kp C_PP    &none           &kp F12  &kp F7  &kp F8  &kp F9  &kp none
+                &none  &none                                                       &none  &none
             >;
         };
 
