@@ -41,6 +41,9 @@
     keymap {
         compatible = "zmk,keymap";
 
+        //caps words to shift?
+        //end, zero to the front
+
         base {
             bindings = <
                 &kp Q  &kp W  &kp F  &kp P  &kp B    &kp J  &kp L  &kp U    &kp Y      &kp Z
@@ -50,20 +53,13 @@
             >;
         };
 
-        sym {
-            bindings = <
-                &kp TILDE  &kp RPAR  &kp RBRC  &kp RBKT  &kp CARET    &kp STAR  &kp GRAVE  &kp SQT    &kp DQT    &kp PLUS
-                &kp PRCNT  &kp LPAR  &kp LBRC  &kp LBKT  &kp PIPE     &kp FSLH  &kp EQUAL  &kp UNDER  &kp COLON  &kp MINUS
-                &none      &kp AMPS  &kp AT    &kp HASH  &kp DOLLR    &kp BSLH  &kp QMARK  &kp EXCL   &kp SEMI   &none
-                &none  &trans                                         &none  &trans
-            >;
-        };
+ 
 
         ext {
             bindings = <
-                &kp LS(TAB)  &kp LC(TAB)  &kp LG(LC(L)) &kp LG(LC(O))  &none    &none  &kp DEL   &kp BSPC   &kp RET    &kp TAB
-                &sk LSHFT    &sk LCTRL    &sk LCMD      &sk LALT       &none    &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &caps_word   &none        &none         &none          &none    &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+                &kp LS(TAB)  &kp LC(TAB)  &kp LG(LC(L)) &kp LG(LC(O))  &none    &none    &kp DEL   &kp BSPC   &kp RET    &kp TAB
+                &sk LSHFT    &sk LCTRL    &sk LCMD      &sk LALT       &none    &none    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+                &none        &none        &none         &none          &none    &kp END  &kp HOME  &kp PG_DN  &kp PG_UP  &none
                 &trans  &none                                                   &none  &none
             >;
         };
@@ -72,7 +68,7 @@
             bindings = <
                 &none      &none      &none     &none     &none    &kp STAR  &kp N4  &kp N5  &kp N6  &kp PLUS
                 &kp LSHFT  &kp LCTRL  &kp LCMD  &kp LALT  &none    &kp FSLH  &kp N1  &kp N2  &kp N3  &kp MINUS
-                &none      &none      &none     &none     &none    &none     &kp N7  &kp N8  &kp N9  &kp N0
+                &none      &none      &none     &none     &none    &kp N0    &kp N7  &kp N8  &kp N9  &none
                 &none  &trans                                      &trans  &none
             >;
         };
