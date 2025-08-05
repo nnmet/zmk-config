@@ -82,15 +82,15 @@
                 &mo FNS_E  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_BRI_UP    &kp F10  &kp F4  &kp F5  &kp F6  &kp PSCRN
                 &kp LSHFT  &kp LCTRL     &kp LCMD      &kp LALT    &kp C_BRI_DN    &kp F11  &kp F1  &kp F2  &kp F3  &none
                 &none      &kp C_PREV    &kp C_NEXT    &kp C_PP    &none           &kp F12  &kp F7  &kp F8  &kp F9  &none
-                &none  &none                                                       &none  &none
+                &trans  &none                                                      &none  &trans
             >;
         };
 
         fns_e {
             bindings = <
                 &trans  &none  &bt BT_CLR_ALL  &bt BT_CLR  &none          &none       &none  &none       &none       &to AWSD
-                &none   &none  &none           &none       &sys_reset     &sys_reset  &none  &kp LOCK    &kp SLEEP   &none
-                &none   &none  &none           &none       &bootloader    &none       &none  &bt BT_PRV  &bt BT_NXT  &none
+                &none   &none  &none           &none       &sys_reset     &sys_reset  &none  &bt BT_PRV  &bt BT_NXT  &none
+                &none   &none  &none           &none       &bootloader    &none       &none  &none       &none       &none
                 &none  &none                                              &none  &none
             >;
         };
