@@ -25,26 +25,6 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        combo_fns {
-            timeout-ms = <50>;
-            key-positions = <30 33>;
-            bindings = <&sl FNS>;
-        };
-
-        combo_number {
-            timeout-ms = <50>;
-            key-positions = <30 33>;
-            bindings = <&sl FNS>;
-        };
-    };
-
-    behaviors {
-      
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -53,7 +33,7 @@
                 &kp Q  &kp W  &kp F  &kp P  &kp B    &kp J  &kp L  &kp U    &kp Y      &kp Z
                 &kp A  &kp R  &kp S  &kp T  &kp G    &kp M  &kp N  &kp E    &kp I      &kp O
                 &none  &kp X  &kp C  &kp D  &kp V    &kp K  &kp H  &kp DOT  &kp COMMA  &none
-                &lt EXT &num_word NUM  &kp SPACE     &lt NUM ESC  &lt SYM K_CANCEL
+                &lt EXT &num_word NUM  &kp SPACE     &lt FNS ESC  &lt SYM K_CANCEL
             >;
         };
 
