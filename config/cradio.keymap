@@ -33,8 +33,6 @@
         };
     };
 
-    // num n permiti ctrl+0?
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -76,9 +74,9 @@
 
         fns {
             bindings = <
-                &mo FNS_E  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_BRI_UP    &kp F10  &kp F4  &kp F5  &kp F6  &kp PSCRN
+                &mo FNS_E  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_BRI_UP    &kp F10  &kp F4  &kp F5  &kp F6  &none
                 &kp LSHFT  &kp LCTRL     &kp LCMD      &kp LALT    &kp C_BRI_DN    &kp F11  &kp F1  &kp F2  &kp F3  &none
-                &none      &kp C_PREV    &kp C_NEXT    &kp C_PP    &none           &kp F12  &kp F7  &kp F8  &kp F9  &none
+                &none      &kp C_PREV    &kp C_NEXT    &kp C_PP    &kp PSCRN       &kp F12  &kp F7  &kp F8  &kp F9  &none
                 &trans  &none                                                      &none  &trans
             >;
         };
