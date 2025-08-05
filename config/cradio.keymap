@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define BASE 0
-#define SYM 2
-#define EXT 1
+#define SYM 1
+#define EXT 2
 #define NUM 3
 #define FNS 4
 #define FNS_E 5
