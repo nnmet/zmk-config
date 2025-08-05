@@ -12,8 +12,10 @@
 #define AWSD 6
 #define AWSD_E 7
 
+#define TAPPING_TERM_MS 150
+
 &lt {
-    tapping-term-ms = <150>;
+    tapping-term-ms = <TAPPING_TERM_MS>;
 };
 
 &sk {
@@ -21,6 +23,16 @@
 };
 
 / {
+    behaviors {
+        lt_num: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            bindings = <&mo>, <&num_word>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -29,7 +41,7 @@
                 &kp Q  &kp W  &kp F  &kp P  &kp B    &kp J  &kp L  &kp U      &kp Y    &kp Z
                 &kp A  &kp R  &kp S  &kp T  &kp G    &kp M  &kp N  &kp E      &kp I    &kp O
                 &none  &kp X  &kp C  &kp D  &kp V    &kp K  &kp H  &kp COMMA  &kp DOT  &none
-                &lt EXT &num_word NUM  &kp SPACE     &lt FNS ESC  &lt SYM K_CANCEL
+                &lt_num EXT NUM  &kp SPACE           &lt FNS ESC  &lt SYM K_CANCEL
             >;
         };
 
