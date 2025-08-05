@@ -1,4 +1,5 @@
 #include <behaviors.dtsi>
+#include <behaviors/num_word.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
@@ -32,6 +33,12 @@
             key-positions = <30 33>;
             bindings = <&sl FNS>;
         };
+
+        combo_number {
+            timeout-ms = <50>;
+            key-positions = <30 33>;
+            bindings = <&sl FNS>;
+        };
     };
 
     behaviors {
@@ -46,7 +53,7 @@
                 &kp Q  &kp W  &kp F  &kp P  &kp B    &kp J  &kp L  &kp U    &kp Y      &kp Z
                 &kp A  &kp R  &kp S  &kp T  &kp G    &kp M  &kp N  &kp E    &kp I      &kp O
                 &none  &kp X  &kp C  &kp D  &kp V    &kp K  &kp H  &kp DOT  &kp COMMA  &none
-                &mo EXT  &kp SPACE                   &lt NUM ESC  &mo SYM
+                &lt EXT &num_word  &kp SPACE         &lt NUM ESC  &lt SYM K_CANCEL
             >;
         };
 
@@ -61,10 +68,10 @@
 
         ext {
             bindings = <
-                &kp LS(TAB)  &kp LC(TAB)  &kp LG(LC(L)) &kp LG(LC(O))  &none         &none    &kp DEL   &kp BSPC   &kp RET    &kp TAB
-                &sk LSHFT    &sk LCTRL    &sk LCMD      &sk LALT       &caps_word    &none    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &none        &none        &none         &none          &none         &kp END  &kp HOME  &kp PG_DN  &kp PG_UP  &none
-                &trans  &none                                                        &none  &none
+                &none        &kp LG(LC(L))  &kp LG(LC(O))  &none      &none         &none    &kp DEL   &kp BSPC   &kp RET    &none
+                &sk LSHFT    &sk LCTRL      &sk LCMD       &sk LALT   &caps_word    &kp TAB  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+                &none        &none          &none          &none      &none         &kp END  &kp HOME  &kp PG_DN  &kp PG_UP  &none
+                &trans  &none                                                       &none  &none
             >;
         };
 
