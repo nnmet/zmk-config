@@ -20,10 +20,6 @@
     release-after-ms = <500>;
 };
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS BACKSPACE>;
-};
-
 / {
     keymap {
         compatible = "zmk,keymap";
