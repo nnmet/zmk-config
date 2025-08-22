@@ -31,7 +31,7 @@
             key-positions = <30 33>;
             bindings = <&lt FNS>;
         };
-    }
+    };
 
     behaviors {
         lt_num: lt_num {
