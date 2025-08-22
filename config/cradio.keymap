@@ -23,6 +23,16 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_fns {
+            timeout-ms = <50>;
+            key-positions = <30 33>;
+            bindings = <&lt FNS>;
+        };
+    }
+
     behaviors {
         lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
@@ -38,10 +48,10 @@
 
         base {
             bindings = <
-                &kp B  &kp L  &kp D  &kp W  &none    &none  &kp F  &kp O    &kp U      &kp J
-                &kp N  &kp R  &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E    &kp A      &kp I
-                &kp Z  &kp Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp DOT  &kp COMMA  &kp X
-                &lt_num EXT NUM  &kp SPACE           &lt FNS ESC  &lt SYM K_CANCEL
+                &kp B  &kp L  &kp D  &kp W  &none    &kp K_CANCEL  &kp F  &none    &kp U      &kp J
+                &kp N  &kp R  &kp T  &kp S  &kp G    &kp Y         &kp H  &kp A    &kp I      &kp O
+                &kp Z  &kp Q  &kp M  &kp C  &kp V    &kp K         &kp P  &kp DOT  &kp COMMA  &kp X
+                &lt_num EXT NUM  &kp SPACE           &kp E  &lt SYM ESC
             >;
         };
 
