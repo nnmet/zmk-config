@@ -44,8 +44,10 @@
 
         sg_macro: behavior_macro {
             label = "SG_MACRO";
+            compatible = "zmk,behavior-macro";
             wait-ms = <0>;       // default inter-binding delay
             tap-ms  = <20>;      // press/release time for taps
+            #binding-cells = <0>;
             bindings = <
                 &macro_tap &kp SPACE      // Jump
                 &macro_wait_time 10       // delay in ms (tune this)
