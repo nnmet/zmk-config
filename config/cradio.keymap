@@ -23,16 +23,6 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        combo_fns {
-            timeout-ms = <50>;
-            key-positions = <30 33>;
-            bindings = <&sl FNS>;
-        };
-    };
-
     behaviors {
         lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
@@ -52,6 +42,22 @@
                 &macro_wait_time 4
                 &macro_tap &kp LCTRL
             >;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_fns {
+            timeout-ms = <50>;
+            key-positions = <30 33>;
+            bindings = <&sl FNS>;
+        };
+
+        sg_combo {
+            timeout-ms = <50>;   
+            key-positions = <10 31>;
+            bindings = <&sg_macro>;
         };
     };
 
