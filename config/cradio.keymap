@@ -49,7 +49,7 @@
             tap-ms  = <20>;
             bindings = <
                 &macro_tap &kp SPACE
-                &macro_wait_time 7
+                &macro_wait_time 4
                 &macro_tap &kp LCTRL
             >;
         };
