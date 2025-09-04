@@ -43,15 +43,14 @@
         };
 
         sg_macro: behavior_macro {
-            label = "SG_MACRO";
             compatible = "zmk,behavior-macro";
-            wait-ms = <0>;       // default inter-binding delay
-            tap-ms  = <20>;      // press/release time for taps
             #binding-cells = <0>;
+            wait-ms = <0>;      
+            tap-ms  = <20>;
             bindings = <
-                &macro_tap &kp SPACE      // Jump
-                &macro_wait_time 10       // delay in ms (tune this)
-                &macro_tap &kp LCTRL          // Crouch
+                &macro_tap &kp SPACE
+                &macro_wait_time 7
+                &macro_tap &kp LCTRL
             >;
         };
     };
@@ -124,11 +123,13 @@
 
         awsd_e {
             bindings = <
-                &kp ESC  &kp N1  &trans  &kp N2  &kp N3    &none  &none  &none  &none  &none
-                &kp N0   &trans  &trans  &trans  &kp N4    &none  &none  &none  &none  &none
+                &kp ESC     &kp N1  &trans  &kp N2  &kp N3    &none  &none  &none  &none  &none
+                &kp N0      &trans  &trans  &trans  &kp N4    &none  &none  &none  &none  &none
                 &sg_macro   &kp N8  &kp N7  &kp N6  &kp N5    &none  &none  &none  &none  &none
-                &trans  &none                              &none  &none
+                &trans  &none                                 &none  &none
             >;
         };
     };
 };
+
+asd    
