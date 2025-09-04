@@ -35,11 +35,10 @@
         sg_macro: behavior_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;      
+            wait-ms = <0>;
             tap-ms  = <7>;
             bindings = <
                 &macro_tap &kp SPACE
-                &macro_wait_time 4
                 &macro_tap &kp LCTRL
             >;
         };
