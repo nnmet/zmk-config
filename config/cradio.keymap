@@ -41,6 +41,17 @@
             tapping-term-ms = <TAPPING_TERM_MS>;
             bindings = <&mo>, <&num_word>;
         };
+
+        sg_macro: behavior_macro {
+            label = "SG_MACRO";
+            wait-ms = <0>;       // default inter-binding delay
+            tap-ms  = <20>;      // press/release time for taps
+            bindings = <
+                &macro_tap &kp SPACE      // Jump
+                &macro_wait_time 10       // delay in ms (tune this)
+                &macro_tap &kp LCTRL          // Crouch
+            >;
+        };
     };
 
     keymap {
@@ -113,7 +124,7 @@
             bindings = <
                 &kp ESC  &kp N1  &trans  &kp N2  &kp N3    &none  &none  &none  &none  &none
                 &kp N0   &trans  &trans  &trans  &kp N4    &none  &none  &none  &none  &none
-                &kp N9   &kp N8  &kp N7  &kp N6  &kp N5    &none  &none  &none  &none  &none
+                &sg_macro   &kp N8  &kp N7  &kp N6  &kp N5    &none  &none  &none  &none  &none
                 &trans  &none                              &none  &none
             >;
         };
