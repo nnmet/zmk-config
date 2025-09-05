@@ -41,7 +41,7 @@
                 &macro_press &kp SPACE
                 &macro_wait_time 6
                 &macro_press &kp LCTRL
-                &macro_wait_time 100
+                &macro_wait_time 20
                 &macro_release &kp SPACE
                 &macro_release &kp LCTRL
             >;
