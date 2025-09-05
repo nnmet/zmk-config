@@ -41,59 +41,8 @@
                 &macro_press &kp SPACE
                 &macro_wait_time 6
                 &macro_press &kp LCTRL
-                &macro_wait_time 20
                 &macro_release &kp SPACE
                 &macro_release &kp LCTRL
-            >;
-        };
-
-        sg_macroq: behavior_macroq {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;      
-            tap-ms  = <6>;
-            bindings = <
-                &macro_press &kp SPACE
-                &macro_wait_time 6
-                &macro_press &kp LCTRL
-                &macro_wait_time 6
-                &macro_release &kp SPACE
-                &macro_release &kp LCTRL
-            >;
-        };
-
-        sg_macrox: behavior_macrox {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;      
-            tap-ms  = <6>;
-            bindings = <
-                &macro_tap &kp SPACE
-                &macro_wait_time 6
-                &macro_tap &kp LCTRL
-            >;
-        };
-
-        sg_macroy: behavior_macroy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;      
-            tap-ms  = <6>;
-            bindings = <
-                &macro_tap &kp SPACE
-                &macro_tap &kp LCTRL
-            >;
-        };
-
-        sg_macroz: behavior_macroz {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;      
-            tap-ms  = <0>;
-            bindings = <
-                &macro_tap &kp SPACE
-                &macro_wait_time 6
-                &macro_tap &kp LCTRL
             >;
         };
     };
@@ -173,18 +122,18 @@
 
         awsd {
             bindings = <
-                &kp TAB    &sg_macroy  &kp W  &sg_macro  &sg_macroq    &none  &none  &none  &none  &none
-                &kp LSHFT  &kp A  &kp S  &kp D  &sg_macrox    &none  &none  &none  &none  &none
-                &kp LCTRL  &kp Z  &kp X  &kp C  &sg_macroz    &none  &none  &none  &none  &none
+                &kp TAB    &kp Q  &kp W  &kp E  &kp R    &none  &none  &none  &none  &none
+                &kp LSHFT  &kp A  &kp S  &kp D  &kp F    &none  &none  &none  &none  &none
+                &kp LCTRL  &kp Z  &kp X  &kp C  &kp V    &none  &none  &none  &none  &none
                 &mo AWSD_E  &kp SPACE                    &to BASE  &none
             >;
         };
 
         awsd_e {
             bindings = <
-                &kp ESC     &kp N1  &trans  &kp N2  &kp N3    &none  &none  &none  &none  &none
-                &kp N0      &trans  &trans  &trans  &kp N4    &none  &none  &none  &none  &none
-                &sg_macro   &kp N8  &kp N7  &kp N6  &kp N5    &none  &none  &none  &none  &none
+                &kp ESC  &kp N1  &trans  &kp N2  &kp N3    &none  &none  &none  &none  &none
+                &kp N0   &trans  &trans  &trans  &kp N4    &none  &none  &none  &none  &none
+                &kp N9   &kp N8  &kp N7  &kp N6  &kp N5    &none  &none  &none  &none  &none
                 &trans  &none                                 &none  &none
             >;
         };
