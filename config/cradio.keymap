@@ -47,7 +47,7 @@
             >;
         };
 
-        sg_macrox: behavior_macro {
+        sg_macrox: behavior_macrox {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;      
@@ -59,7 +59,7 @@
             >;
         };
 
-        sg_macroy: behavior_macro {
+        sg_macroy: behavior_macroy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;      
@@ -70,7 +70,7 @@
             >;
         };
 
-        sg_macroz: behavior_macro {
+        sg_macroz: behavior_macrox {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;      
