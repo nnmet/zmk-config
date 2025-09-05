@@ -46,6 +46,41 @@
                 &macro_release &kp LCTRL
             >;
         };
+
+        sg_macrox: behavior_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;      
+            tap-ms  = <6>;
+            bindings = <
+                &macro_tap &kp SPACE
+                &macro_wait_time 6
+                &macro_tap &kp LCTRL
+            >;
+        };
+
+        sg_macroy: behavior_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;      
+            tap-ms  = <6>;
+            bindings = <
+                &macro_tap &kp SPACE
+                &macro_tap &kp LCTRL
+            >;
+        };
+
+        sg_macroz: behavior_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;      
+            tap-ms  = <0>;
+            bindings = <
+                &macro_tap &kp SPACE
+                &macro_wait_time 6
+                &macro_tap &kp LCTRL
+            >;
+        };
     };
 
     combos {
@@ -134,7 +169,7 @@
             bindings = <
                 &kp ESC     &kp N1  &trans  &kp N2  &kp N3    &none  &none  &none  &none  &none
                 &kp N0      &trans  &trans  &trans  &kp N4    &none  &none  &none  &none  &none
-                &sg_macro   &kp N8  &kp N7  &kp N6  &kp N5    &none  &none  &none  &none  &none
+                &sg_macro   &sg_macrox  &sg_macroy  &sg_macroz  &kp N5    &none  &none  &none  &none  &none
                 &trans  &none                                 &none  &none
             >;
         };
