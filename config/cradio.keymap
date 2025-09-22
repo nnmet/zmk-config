@@ -79,15 +79,15 @@
                 &kp STAR   &kp RPAR  &kp RBRC  &kp RBKT  &none        &none     &kp GRAVE  &kp SQT    &kp DQT    &kp PLUS
                 &kp PRCNT  &kp LPAR  &kp LBRC  &kp LBKT  &kp PIPE     &kp FSLH  &kp EQUAL  &kp UNDER  &kp COLON  &kp MINUS
                 &kp CARET  &kp AMPS  &kp AT    &kp HASH  &kp DLLR     &kp BSLH  &kp QMARK  &kp EXCL   &kp SEMI   &kp TILDE
-                &none  &trans                                         &none  &tran
+                &none  &trans                                         &none  &trans
             >;
         };
 
         ext {
             bindings = <
                 &kp LG(LC(A))  &kp LG(LC(L))  &kp LG(LC(O))  &none       &none       &none    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
-                &sk LSHFT      &sk LCTRL      &sk LCMD       &sk LALT    &kp BSPC    &none    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &none          &none          &kp LS(TAB)    &swap       &kp DEL     &none    &kp RET   &kp TAB    &none      &none
+                &sk LSHFT      &sk LCTRL      &sk LCMD       &sk LALT    &kp BSPC    &kp RET  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+                &none          &none          &kp LS(TAB)    &swap       &kp DEL     &none    &kp TAB   &none      &none      &none
                 &trans  &none                                                        &none  &none
             >;
         };
