@@ -13,7 +13,7 @@
 #define AWSD_E 7
 
 &lt {
-    tapping-term-ms = 150;
+    tapping-term-ms = <150>;
 };
 
 &sk {
@@ -35,7 +35,7 @@
             bindings = <&mo>, <&num_word>;
         };
 
-        mt_word: mt_word {
+        td_cancel_shift_caps: tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <
@@ -63,7 +63,7 @@
                 &kp B  &kp L  &kp D  &kp W  &none    &none  &kp F  &kp O    &kp U      &kp J
                 &kp N  &kp R  &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E    &kp A      &kp I
                 &kp Z  &kp Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp DOT  &kp COMMA  &kp X
-                &lt_num EXT NUM  &kp SPACE           &mt_word  &lt SYM ESC
+                &lt_num EXT NUM  &kp SPACE           &mt LSFT K_CANCEL  &lt SYM ESC
             >; 
         };
 
