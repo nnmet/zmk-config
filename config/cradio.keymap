@@ -44,7 +44,7 @@
             >;
         };
 
-        swap: swap {
+        alt_tab: alt_tab {
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
@@ -85,10 +85,10 @@
 
         ext {
             bindings = <
-                &kp LG(LC(A))  &kp LG(LC(L))  &kp LG(LC(O))  &none       &none       &none    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
-                &sk LSHFT      &sk LCTRL      &sk LCMD       &sk LALT    &kp BSPC    &kp RET  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &none          &none          &kp LS(TAB)    &swap       &kp DEL     &none    &kp TAB   &none      &none      &none
-                &trans  &none                                                        &none  &none
+                &kp LG(LC(L))  &kp LG(LC(O))  &kp BSPC     &kp DEL   &none    &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+                &sk LSHFT      &sk LCTRL      &sk LCMD     &sk LALT  &none    &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+                &none          &none          &kp LS(TAB)  &alt_tab  &none    &none  &kp RET   &kp TAB    &none      &none
+                &trans  &none                                                 &none  &none
             >;
         };
 
