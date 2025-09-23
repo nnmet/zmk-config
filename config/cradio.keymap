@@ -94,10 +94,10 @@
 
         num {
             bindings = <
-                &kp MINUS  &kp PLUS   &kp STAR  &kp FSLH  &none      &none      &kp N4  &kp N5  &kp N6  &none
-                &kp LSHFT  &kp LCTRL  &kp LCMD  &kp LALT  &kp DOT    &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N0
-                &none      &none      &none     &none     &none      &none      &kp N7  &kp N8  &kp N9  &none
-                &none  &trans                                        &trans  &trans
+                &kp MINUS  &kp PLUS   &kp STAR  &kp FSLH   &none    &none   &kp N4  &kp N5  &kp N6  &none
+                &kp LSHFT  &kp LCTRL  &kp LCMD  &kp LALT   &none    &none   &kp N1  &kp N2  &kp N3  &kp N0
+                &none      &none      &kp DOT   &kp EQUAL  &none    &none   &kp N7  &kp N8  &kp N9  &none
+                &none  &trans                                       &trans  &trans
             >;
         };
 
