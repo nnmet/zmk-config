@@ -25,26 +25,26 @@
     behaviors {
         lt_sym_esc: lt_sym_esc {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
-            bindings = <&mo SYM>, <&kp ESC>;
+            bindings = <&mo SYM &kp ESC>;
         };
 
         lt_ext_num: lt_ext_num {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <50>;
-            bindings = <&mo EXT>, <&num_word NUM>;
+            bindings = <&mo EXT &num_word NUM>;
         };
 
         mt_sft_cancel: mt_sft_cancel {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <100>;
-            bindings = <&kp LSFT>, <&kp K_CANCEL>;
+            bindings = <&kp LSFT &kp K_CANCEL>;
         };
 
         td_word: td_word {
