@@ -31,22 +31,6 @@
 
 / {
     behaviors {
-        lt_fast: lt_fast {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
-            bindings = <&mo>, <&kp>;
-        };
-
-        mt_faster: mt_faster {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <100>;
-            bindings = <&kp>, <&kp>;
-        };
-
         lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -60,7 +44,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <100>;
             bindings = <
-                &mt_faster LSFT K_CANCEL
+                &mt LSFT K_CANCEL
                 &caps_word    
             >;
         };
@@ -91,7 +75,7 @@
                 &kp B  &kp L  &kp D  &kp W  &none    &none  &kp F  &kp O      &kp U    &kp J
                 &kp N  &kp R  &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E      &kp A    &kp I
                 &kp Z  &kp Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
-                &lt_num EXT NUM  &kp SPACE           &td_word  &lt_fast SYM ESC
+                &lt_num EXT NUM  &kp SPACE           &td_word  &lt SYM ESC
             >; 
         };
 
