@@ -46,6 +46,7 @@
         htd_cancel_caps: htd_sft_cancel_caps {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
+            quick-tap-ms = <HTD_TAPPING_TERM>;
             tapping-term-ms = <HTD_TAPPING_TERM>;
             bindings = <&kp>, <&td_cancel_caps>;
         };
