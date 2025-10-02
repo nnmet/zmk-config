@@ -41,12 +41,20 @@
             bindings = <&mo>, <&num_word>;
         };
 
+        test: test {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <50>;
+            bindings = <&mo>, <&kp;
+        };
+
         td_word: td_word {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <
-                &sk LSHFT
+                &test LSHFT K_CANCEL
                 &caps_word    
             >;
         };
