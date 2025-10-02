@@ -46,7 +46,7 @@
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <50>;
-            bindings = <&mo>, <&kp;
+            bindings = <&mo>, <&kp>;
         };
 
         td_word: td_word {
