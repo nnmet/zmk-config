@@ -12,6 +12,14 @@
 #define AWSD 6
 #define AWSD_E 7
 
+&lt {
+    tapping-term-ms = <150>;
+}
+
+&mt {
+    tapping-term-ms = <100>;
+}
+
 &sk {
     lazy;
     release-after-ms = <2000>;
@@ -23,28 +31,28 @@
 
 / {
     behaviors {
-        lt_sym_esc: lt_sym_esc {
+        lt_fast: lt_fast {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
-            bindings = <&mo SYM &kp ESC>;
+            bindings = <&mo>, <&kp>;
         };
 
-        lt_ext_num: lt_ext_num {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <50>;
-            bindings = <&mo EXT &num_word NUM>;
-        };
-
-        mt_sft_cancel: mt_sft_cancel {
+        mt_faster: mt_faster {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <100>;
-            bindings = <&kp LSFT &kp K_CANCEL>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        lt_num: lt_num {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <50>;
+            bindings = <&mo>, <&num_word>;
         };
 
         td_word: td_word {
@@ -52,7 +60,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <100>;
             bindings = <
-                &mt_sft_cancel
+                &mt_faster LSFT K_CANCEL
                 &caps_word    
             >;
         };
@@ -83,7 +91,7 @@
                 &kp B  &kp L  &kp D  &kp W  &none    &none  &kp F  &kp O      &kp U    &kp J
                 &kp N  &kp R  &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E      &kp A    &kp I
                 &kp Z  &kp Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
-                &lt_ext_num  &kp SPACE               &td_word  &lt_sym_esc
+                &lt_num EXT NUM  &kp SPACE           &td_word  &lt_fast SYM ESC
             >; 
         };
 
