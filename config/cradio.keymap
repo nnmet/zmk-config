@@ -23,7 +23,7 @@
 
 / {
     behaviors {
-        mo_sym_esc: mo_sym_esc {
+        lt_sym_esc: lt_sym_esc {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
@@ -31,12 +31,12 @@
             bindings = <&mo SYM>, <&kp ESC>;
         };
 
-        mo_num: mo_num {
+        lt_ext_num: lt_ext_num {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <50>;
-            bindings = <&mo>, <&num_word>;
+            bindings = <&mo EXT>, <&num_word NUM>;
         };
 
         mt_sft_cancel: mt_sft_cancel {
@@ -83,7 +83,7 @@
                 &kp B  &kp L  &kp D  &kp W  &none    &none  &kp F  &kp O      &kp U    &kp J
                 &kp N  &kp R  &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E      &kp A    &kp I
                 &kp Z  &kp Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
-                &mo_num EXT NUM  &kp SPACE           &td_word  &mo_sym_esc
+                &lt_ext_num  &kp SPACE               &td_word  &lt_sym_esc
             >; 
         };
 
