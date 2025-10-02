@@ -29,22 +29,24 @@
     ignore-modifiers;
 };
 
+// &mt LSFT K_CANCEL
+
 / {
     behaviors {
         lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <75>;
+            tapping-term-ms = <100>;
             bindings = <&mo>, <&num_word>;
         };
 
         td_word: td_word {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <
-                &mt LSFT K_CANCEL
+                &sk LSHFT
                 &caps_word    
             >;
         };
