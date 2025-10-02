@@ -12,12 +12,10 @@
 #define AWSD 6
 #define AWSD_E 7
 
+#define HTD_TAPPING_TERM 200
+
 &lt {
     tapping-term-ms = <150>;
-};
-
-&mt {
-    tapping-term-ms = <100>;
 };
 
 &sk {
@@ -29,32 +27,27 @@
     ignore-modifiers;
 };
 
-// &mt LSFT K_CANCEL
-
 / {
     behaviors {
         lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
             tapping-term-ms = <100>;
             bindings = <&mo>, <&num_word>;
         };
 
-        td_word: td_word {
+        td_cancel_caps: td_cancel_caps {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp K_CANCEL>, <&caps_word>;    
+            tapping-term-ms = <HTD_TAPPING_TERM>;
+            bindings = <&kp K_CANCEL>, <&caps_word>;
         };
         
-        test: test {
+        htd_cancel_caps: htd_sft_cancel_caps {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&td_word>;
+            tapping-term-ms = <HTD_TAPPING_TERM>;
+            bindings = <&kp>, <&td_cancel_caps>;
         };
 
         alt_tab: alt_tab {
@@ -83,7 +76,7 @@
                 &kp B  &kp L  &kp D  &kp W  &none    &none  &kp F  &kp O      &kp U    &kp J
                 &kp N  &kp R  &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E      &kp A    &kp I
                 &kp Z  &kp Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
-                &lt_num EXT NUM  &kp SPACE           &test LSHIFT 0  &lt SYM ESC
+                &lt_num EXT NUM  &kp SPACE           &htd_cancel_caps LSHIFT 0  &lt SYM ESC
             >; 
         };
 
@@ -98,19 +91,19 @@
 
         ext {
             bindings = <
-                &kp LG(LC(L))  &kp LG(LC(O))  &kp BSPC     &kp DEL   &none    &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
-                &sk LSHFT      &sk LCTRL      &sk LCMD     &sk LALT  &none    &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &none          &none          &kp LS(TAB)  &alt_tab  &none    &none  &kp RET   &kp TAB    &none      &none
-                &trans  &none                                                 &none  &none
+                &kp LG(LC(L))  &kp LG(LC(O))  &kp BSPC     &kp DEL   &none      &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+                &sk LSHFT      &sk LCTRL      &sk LCMD     &sk LALT  &kp RET    &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+                &none          &none          &kp LS(TAB)  &alt_tab  &none      &none  &kp TAB   &none      &none      &none
+                &trans  &none                                                   &none  &none
             >;
         };
 
         num {
             bindings = <
-                &kp MINUS  &kp PLUS   &kp STAR  &kp FSLH   &none    &none   &kp N4  &kp N5  &kp N6  &none
-                &kp LSHFT  &kp LCTRL  &kp LCMD  &kp LALT   &none    &none   &kp N1  &kp N2  &kp N3  &kp N0
-                &none      &none      &kp DOT   &kp EQUAL  &none    &none   &kp N7  &kp N8  &kp N9  &none
-                &none  &trans                                       &trans  &trans
+                &kp MINUS  &kp PLUS   &kp STAR  &kp FSLH   &none        &none   &kp N4  &kp N5  &kp N6  &none
+                &kp LSHFT  &kp LCTRL  &kp LCMD  &kp LALT   &kp EQUAL    &none   &kp N1  &kp N2  &kp N3  &kp N0
+                &none      &none      &none     &kp DOT    &none        &none   &kp N7  &kp N8  &kp N9  &none
+                &none  &trans                                           &trans  &trans
             >;
         };
 
