@@ -23,6 +23,22 @@
 
 / {
     behaviors {
+        lt_sym_esc: lt_sym_esc {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&mo SYM>, <&kp ESC>;
+        };
+
+        mt_sft_cancel: mt_sft_cancel {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <100>;
+            bindings = <&kp LSFT>, <&kp K_CANCEL>;
+        };
+
         mo_num: mo_num {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -39,22 +55,6 @@
                 &mt_sft_cancel
                 &caps_word    
             >;
-        };
-
-        lt_sym_esc: lt_sym_esc {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
-            bindings = <&mo SYM>, <&kp ESC>;
-        };
-
-        mt_sft_cancel: mt_sft_cancel {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <100>;
-            bindings = <&kp LSFT>, <&kp K_CANCEL>;
         };
 
         alt_tab: alt_tab {
