@@ -23,20 +23,12 @@
 
 / {
     behaviors {
-        lt_sym_esc: lt_sym_esc {
+        mo_sym_esc: mo_sym_esc {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&mo SYM>, <&kp ESC>;
-        };
-
-        mt_sft_cancel: mt_sft_cancel {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <100>;
-            bindings = <&kp LSFT>, <&kp K_CANCEL>;
         };
 
         mo_num: mo_num {
@@ -45,6 +37,14 @@
             flavor = "hold-preferred";
             tapping-term-ms = <50>;
             bindings = <&mo>, <&num_word>;
+        };
+
+        mt_sft_cancel: mt_sft_cancel {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <100>;
+            bindings = <&kp LSFT>, <&kp K_CANCEL>;
         };
 
         td_word: td_word {
@@ -83,7 +83,7 @@
                 &kp B  &kp L  &kp D  &kp W  &none    &none  &kp F  &kp O      &kp U    &kp J
                 &kp N  &kp R  &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E      &kp A    &kp I
                 &kp Z  &kp Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
-                &mo_num EXT NUM  &kp SPACE           &td_word  &lt_sym_esc
+                &mo_num EXT NUM  &kp SPACE           &td_word  &mo_sym_esc
             >; 
         };
 
