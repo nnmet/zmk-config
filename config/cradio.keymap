@@ -74,9 +74,9 @@
 
         base {
             bindings = <
-                &kp B  &kp L  &kp D  &kp W  &none    &none  &kp F  &kp O      &kp U    &kp J
-                &kp N  &kp R  &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E      &kp A    &kp I
-                &kp Z  &kp Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
+                &kp Q  &kp W  &kp E  &kp R  &none    &none  &kp U  &kp I      &kp O    &kp P
+                &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K      &kp L    &kp T
+                &kp Z  &kp X  &kp C  &kp V  &kp B    &kp M  &kp N  &kp COMMA  &kp DOT  &kp Y
                 &lt_num EXT NUM  &kp SPACE           &htd_cancel_caps LSHIFT 0  &lt SYM ESC
             >;
         };
