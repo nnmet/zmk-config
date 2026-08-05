@@ -14,9 +14,11 @@
 
 #define HTD_TAPPING_TERM 200
 #define TAPPING_TERM 80
+#define LT_TAPPING_TERM 175
+#define SMOD_TAPPING_TERM 175
 
 &lt {
-    tapping-term-ms = <TAPPING_TERM>;
+    tapping-term-ms = <LT_TAPPING_TERM>;
 };
 
 &sk {
@@ -50,6 +52,21 @@
             quick-tap-ms = <HTD_TAPPING_TERM>;
             tapping-term-ms = <HTD_TAPPING_TERM>;
             bindings = <&kp>, <&td_cancel_caps>;
+        };
+
+        smod: sticky_or_held_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <SMOD_TAPPING_TERM>;
+            bindings = <&kp>, <&sk>;
+        };
+
+        undo_redo: undo_redo {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LC(Z)>, <&kp LC(LS(Z))>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         alt_tab: alt_tab {
@@ -93,10 +110,10 @@
 
         ext {
             bindings = <
-                &alt_tab   &kp RET        &kp BSPC   &kp DEL    &none        &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
-                &sk LSHFT  &sk LCTRL      &sk LCMD   &sk LALT   &kp TAB      &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &kp LC(Z)  &kp LC(LS(Z))  &kp LC(X)  &kp LC(C)  &kp LC(V)    &none  &none     &none      &none      &none
-                &trans  &none                                                &none  &trans
+                &alt_tab           &kp RET            &kp BSPC         &kp DEL          &none        &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+                &smod LSHFT LSHFT  &smod LCTRL LCTRL  &smod LCMD LCMD  &smod LALT LALT  &kp TAB      &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+                &undo_redo         &kp LC(A)          &kp LC(X)        &kp LC(C)        &kp LC(V)    &none  &none     &none      &none      &none
+                &trans  &none                                                                        &none  &trans
             >;
         };
 
