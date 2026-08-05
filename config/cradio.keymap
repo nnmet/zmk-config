@@ -19,6 +19,8 @@
 #define NUM_TAPPING_TERM 200
 #define NUM_PRIOR_IDLE 125
 
+#define SMOD(mod) &smod mod mod
+
 &lt {
     tapping-term-ms = <LT_TAPPING_TERM>;
 };
@@ -121,10 +123,10 @@
 
         ext {
             bindings = <
-                &alt_tab           &kp RET            &kp BSPC         &kp DEL          &none        &none  &none     &none      &none      &none
-                &smod LSHFT LSHFT  &smod LCTRL LCTRL  &smod LCMD LCMD  &smod LALT LALT  &kp TAB      &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &undo_redo         &kp LC(A)          &kp LC(X)        &kp LC(C)        &kp LC(V)    &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
-                &trans  &none                                                                        &none  &trans
+                &alt_tab     &kp RET      &kp BSPC    &kp DEL     &none        &none  &none     &none      &none      &none
+                SMOD(LSHFT)  SMOD(LCTRL)  SMOD(LCMD)  SMOD(LALT)  &kp TAB      &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+                &undo_redo   &kp LC(A)    &kp LC(X)   &kp LC(C)   &kp LC(V)    &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+                &trans  &none                                                  &none  &trans
             >;
         };
 
