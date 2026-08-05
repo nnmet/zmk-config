@@ -16,6 +16,8 @@
 #define TAPPING_TERM 80
 #define LT_TAPPING_TERM 175
 #define SMOD_TAPPING_TERM 175
+#define NUM_TAPPING_TERM 200
+#define NUM_PRIOR_IDLE 125
 
 &lt {
     tapping-term-ms = <LT_TAPPING_TERM>;
@@ -52,6 +54,15 @@
             quick-tap-ms = <HTD_TAPPING_TERM>;
             tapping-term-ms = <HTD_TAPPING_TERM>;
             bindings = <&kp>, <&td_cancel_caps>;
+        };
+
+        num_hold: num_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <NUM_TAPPING_TERM>;
+            require-prior-idle-ms = <NUM_PRIOR_IDLE>;
+            bindings = <&mo>, <&kp>;
         };
 
         smod: sticky_or_held_mod {
@@ -92,9 +103,9 @@
 
         base {
             bindings = <
-                &kp B  &kp L  &kp D  &kp W  &none    &none  &kp F  &kp O      &kp U    &kp J
-                &kp N  &kp R  &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E      &kp A    &kp I
-                &kp Z  &kp Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
+                &kp B  &kp L            &kp D  &kp W  &none    &none  &kp F  &kp O      &kp U    &kp J
+                &kp N  &kp R            &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E      &kp A    &kp I
+                &kp Z  &num_hold NUM Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
                 &lt_num EXT NUM  &kp SPACE           &htd_cancel_caps LSHIFT 0  &lt SYM ESC
             >;
         };
@@ -110,9 +121,9 @@
 
         ext {
             bindings = <
-                &alt_tab           &kp RET            &kp BSPC         &kp DEL          &none        &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+                &alt_tab           &kp RET            &kp BSPC         &kp DEL          &none        &none  &none     &none      &none      &none
                 &smod LSHFT LSHFT  &smod LCTRL LCTRL  &smod LCMD LCMD  &smod LALT LALT  &kp TAB      &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &undo_redo         &kp LC(A)          &kp LC(X)        &kp LC(C)        &kp LC(V)    &none  &none     &none      &none      &none
+                &undo_redo         &kp LC(A)          &kp LC(X)        &kp LC(C)        &kp LC(V)    &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
                 &trans  &none                                                                        &none  &trans
             >;
         };
