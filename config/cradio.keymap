@@ -60,13 +60,6 @@
             bindings = <&kp>, <&sk>;
         };
 
-        undo_redo: undo_redo {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LC(Z)>, <&kp LC(LS(Z))>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         alt_tab: alt_tab {
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
@@ -110,7 +103,7 @@
             bindings = <
                 &alt_tab     &kp RET      &kp BSPC    &kp DEL     &none        &none  &none     &none      &none      &none
                 SMOD(LSHFT)  SMOD(LCTRL)  SMOD(LCMD)  SMOD(LALT)  &kp TAB      &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &undo_redo   &kp LC(A)    &kp LC(X)   &kp LC(C)   &kp LC(V)    &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+                &kp LC(Z)    &kp LC(A)    &kp LC(X)   &kp LC(C)   &kp LC(V)    &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
                 &trans  &none                                                  &td_cancel_caps  &trans
             >;
         };
