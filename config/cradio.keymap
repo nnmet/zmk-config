@@ -13,7 +13,6 @@
 #define AWSD_E 7
 
 #define HTD_TAPPING_TERM 200
-#define TAPPING_TERM 80
 #define LT_TAPPING_TERM 175
 #define SMOD_TAPPING_TERM 175
 #define NUM_TAPPING_TERM 200
@@ -36,26 +35,11 @@
 
 / {
     behaviors {
-        lt_num: lt_num {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <TAPPING_TERM>;
-            bindings = <&mo>, <&num_word>;
-        };
-
         td_cancel_caps: td_cancel_caps {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <HTD_TAPPING_TERM>;
             bindings = <&kp K_CANCEL>, <&caps_word>;
-        };
-
-        htd_cancel_caps: htd_sft_cancel_caps {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            quick-tap-ms = <HTD_TAPPING_TERM>;
-            tapping-term-ms = <HTD_TAPPING_TERM>;
-            bindings = <&kp>, <&td_cancel_caps>;
         };
 
         num_hold: num_hold {
@@ -64,6 +48,7 @@
             flavor = "balanced";
             tapping-term-ms = <NUM_TAPPING_TERM>;
             require-prior-idle-ms = <NUM_PRIOR_IDLE>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
             bindings = <&mo>, <&kp>;
         };
 
@@ -105,10 +90,10 @@
 
         base {
             bindings = <
-                &kp B  &kp L            &kp D  &kp W  &none    &none  &kp F  &kp O      &kp U    &kp J
-                &kp N  &kp R            &kp T  &kp S  &kp G    &kp Y  &kp H  &kp E      &kp A    &kp I
-                &kp Z  &num_hold NUM Q  &kp M  &kp C  &kp V    &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
-                &lt_num EXT NUM  &kp SPACE           &htd_cancel_caps LSHIFT 0  &lt SYM ESC
+                &kp B  &kp L  &kp D  &kp W  &none              &none  &kp F  &kp O      &kp U    &kp J
+                &kp N  &kp R  &kp T  &kp S  &num_hold NUM G    &kp Y  &kp H  &kp E      &kp A    &kp I
+                &kp Z  &kp Q  &kp M  &kp C  &kp V              &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
+                &mo EXT  &kp SPACE                             &mo NUM  &lt SYM ESC
             >;
         };
 
@@ -126,16 +111,16 @@
                 &alt_tab     &kp RET      &kp BSPC    &kp DEL     &none        &none  &none     &none      &none      &none
                 SMOD(LSHFT)  SMOD(LCTRL)  SMOD(LCMD)  SMOD(LALT)  &kp TAB      &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
                 &undo_redo   &kp LC(A)    &kp LC(X)   &kp LC(C)   &kp LC(V)    &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
-                &trans  &none                                                  &none  &trans
+                &trans  &none                                                  &td_cancel_caps  &trans
             >;
         };
 
         num {
             bindings = <
-                &none     &kp RET    &kp BSPC   &none     &none        &none  &kp N1  &kp N2  &kp N3  &none
-                &kp PLUS  &kp MINUS  &kp STAR   &kp FSLH  &kp EQUAL    &none  &kp N4  &kp N5  &kp N6  &kp N0
-                &none     &none      &kp COMMA  &kp DOT   &none        &none  &kp N7  &kp N8  &kp N9  &none
-                &none  &trans                                          &none  &kp K_CANCEL
+                &none  &none  &none  &none  &none    &none  &kp N1  &kp N2  &kp N3  &none
+                &none  &none  &none  &none  &none    &none  &kp N4  &kp N5  &kp N6  &kp N0
+                &none  &none  &none  &none  &none    &none  &kp N7  &kp N8  &kp N9  &none
+                &none  &trans                        &none  &kp K_CANCEL
             >;
         };
 
