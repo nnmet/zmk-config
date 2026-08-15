@@ -46,6 +46,17 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_fns {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <125>;
+            key-positions = <30 33>;
+            bindings = <&sl FNS>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
