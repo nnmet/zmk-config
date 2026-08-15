@@ -45,7 +45,6 @@
             flavor = "balanced";
             tapping-term-ms = <NUM_TAPPING_TERM>;
             require-prior-idle-ms = <NUM_PRIOR_IDLE>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
             bindings = <&mo>, <&kp>;
         };
 
