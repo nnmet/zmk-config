@@ -31,11 +31,11 @@
 
 / {
     behaviors {
-        td_cancel_caps: td_cancel_caps {
+        num_td: num_td {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <HTD_TAPPING_TERM>;
-            bindings = <&kp K_CANCEL>, <&caps_word>;
+            tapping-term-ms = <NUM_TAPPING_TERM>;
+            bindings = <&mo NUM>, <&num_word NUM>;
         };
 
         num_hold: num_hold {
@@ -74,7 +74,7 @@
                 &kp B  &kp L  &kp D  &kp W  &none              &none  &kp F  &kp O      &kp U    &kp J
                 &kp N  &kp R  &kp T  &kp S  &num_hold NUM G    &kp Y  &kp H  &kp E      &kp A    &kp I
                 &kp Z  &kp Q  &kp M  &kp C  &kp V              &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
-                &mo EXT  &kp SPACE                             &mo NUM  &lt SYM ESC
+                &mo EXT  &kp SPACE                             &num_td  &lt SYM ESC
             >;
         };
 
@@ -83,25 +83,25 @@
                 &kp PRCNT  &kp AT    &kp HASH  &kp DLLR  &none       &none      &kp PLUS   &kp MINUS  &kp UNDER  &kp PIPE
                 &kp LPAR   &kp LBKT  &kp LBRC  &kp FSLH  &kp BSLH    &kp EXCL   &kp QMARK  &kp DQT    &kp COLON  &kp EQUAL
                 &kp RPAR   &kp RBKT  &kp RBRC  &kp STAR  &kp AMPS    &kp TILDE  &kp GRAVE  &kp SQT    &kp SEMI   &kp CARET
-                &none  &trans                                        &none  &trans
+                &none  &trans                                        &none  &none
             >;
         };
 
         ext {
             bindings = <
-                &alt_tab   &kp RET    &kp BSPC   &kp DEL    &none        &none  &none     &none      &none      &none
-                &sk LSHFT  &sk LCTRL  &sk LCMD   &sk LALT   &kp TAB      &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-                &kp LC(Z)  &kp LC(A)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
-                &trans  &none                                            &td_cancel_caps  &trans
+                &alt_tab   &kp RET    &kp BSPC   &kp DEL    &none        &none  &kp PG_DN    &kp HOME    &kp END  &kp PG_UP
+                &sk LSHFT  &sk LCTRL  &sk LCMD   &sk LALT   &kp TAB      &none  &kp LEFT     &kp DOWN    &kp UP   &kp RIGHT
+                &kp LC(Z)  &kp LC(A)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &none  &key_repeat  &caps_word  &none    &none
+                &trans  &none                                            &none  &trans
             >;
         };
 
         num {
             bindings = <
-                &none  &none  &none  &none  &none    &none  &kp N1  &kp N2  &kp N3  &none
-                &none  &none  &none  &none  &none    &none  &kp N4  &kp N5  &kp N6  &kp N0
-                &none  &none  &none  &none  &none    &none  &kp N7  &kp N8  &kp N9  &none
-                &none  &trans                        &none  &kp K_CANCEL
+                &none  &none  &kp BSPC  &kp DEL  &none    &none  &kp N1  &kp N2  &kp N3  &none
+                &none  &none  &none     &none    &none    &none  &kp N4  &kp N5  &kp N6  &kp N0
+                &none  &none  &none     &none    &none    &none  &kp N7  &kp N8  &kp N9  &none
+                &none  &trans                             &trans  &kp K_CANCEL
             >;
         };
 
