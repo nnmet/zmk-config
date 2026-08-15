@@ -12,16 +12,6 @@
 #define AWSD 6
 #define AWSD_E 7
 
-#define LT_TAPPING_TERM 175
-#define NUM_TAPPING_TERM 200
-#define NUM_PRIOR_IDLE 125
-#define EXT_TAPPING_TERM 200
-#define EXT_PRIOR_IDLE 125
-
-&lt {
-    tapping-term-ms = <LT_TAPPING_TERM>;
-};
-
 &sk {
     release-after-ms = <2000>;
 };
@@ -32,29 +22,20 @@
 
 / {
     behaviors {
+        blt: blt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&mo>, <&kp>;
+        };
+
         num_td: num_td {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <NUM_TAPPING_TERM>;
+            tapping-term-ms = <200>;
             bindings = <&mo NUM>, <&num_word NUM>;
-        };
-
-        num_hold: num_hold {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <NUM_TAPPING_TERM>;
-            require-prior-idle-ms = <NUM_PRIOR_IDLE>;
-            bindings = <&mo>, <&kp>;
-        };
-
-        ext_hold: ext_hold {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <EXT_TAPPING_TERM>;
-            require-prior-idle-ms = <EXT_PRIOR_IDLE>;
-            bindings = <&mo>, <&kp>;
         };
 
         alt_tab: alt_tab {
@@ -71,9 +52,9 @@
         base {
             bindings = <
                 &kp B  &kp L  &kp D  &kp W  &none              &none  &kp F  &kp O      &kp U    &kp J
-                &kp N  &kp R  &kp T  &kp S  &num_hold NUM G    &kp Y  &kp H  &kp E      &kp A    &kp I
+                &kp N  &kp R  &kp T  &kp S  &blt NUM G         &kp Y  &kp H  &kp E      &kp A    &kp I
                 &kp Z  &kp Q  &kp M  &kp C  &kp V              &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
-                &ext_hold EXT SPACE  &mo FNS                   &num_td  &lt SYM ESC
+                &blt EXT SPACE  &mo FNS                        &num_td  &blt SYM ESC
             >;
         };
 
