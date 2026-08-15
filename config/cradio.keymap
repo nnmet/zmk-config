@@ -12,6 +12,8 @@
 #define AWSD 6
 #define AWSD_E 7
 
+#define PRIOR_IDLE 125
+
 &sk {
     release-after-ms = <2000>;
 };
@@ -27,7 +29,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <PRIOR_IDLE>;
             bindings = <&mo>, <&kp>;
         };
 
@@ -51,7 +53,7 @@
 
         combo_fns {
             timeout-ms = <50>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <PRIOR_IDLE>;
             key-positions = <30 33>;
             bindings = <&sl FNS>;
         };
