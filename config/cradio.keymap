@@ -15,6 +15,8 @@
 #define LT_TAPPING_TERM 175
 #define NUM_TAPPING_TERM 200
 #define NUM_PRIOR_IDLE 125
+#define EXT_TAPPING_TERM 200
+#define EXT_PRIOR_IDLE 125
 
 &lt {
     tapping-term-ms = <LT_TAPPING_TERM>;
@@ -47,21 +49,20 @@
             bindings = <&mo>, <&kp>;
         };
 
+        ext_hold: ext_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <EXT_TAPPING_TERM>;
+            require-prior-idle-ms = <EXT_PRIOR_IDLE>;
+            bindings = <&mo>, <&kp>;
+        };
+
         alt_tab: alt_tab {
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             ignored-key-positions = <22>;
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        combo_fns {
-            timeout-ms = <100>;
-            key-positions = <30 33>;
-            bindings = <&sl FNS>;
         };
     };
 
@@ -73,7 +74,7 @@
                 &kp B  &kp L  &kp D  &kp W  &none              &none  &kp F  &kp O      &kp U    &kp J
                 &kp N  &kp R  &kp T  &kp S  &num_hold NUM G    &kp Y  &kp H  &kp E      &kp A    &kp I
                 &kp Z  &kp Q  &kp M  &kp C  &kp V              &kp K  &kp P  &kp COMMA  &kp DOT  &kp X
-                &mo EXT  &kp SPACE                             &num_td  &lt SYM ESC
+                &ext_hold EXT SPACE  &mo FNS                   &num_td  &lt SYM ESC
             >;
         };
 
@@ -82,7 +83,7 @@
                 &kp PRCNT  &kp AT    &kp HASH  &kp DLLR  &none       &none      &kp PLUS   &kp MINUS  &kp UNDER  &kp PIPE
                 &kp LPAR   &kp LBKT  &kp LBRC  &kp FSLH  &kp BSLH    &kp EXCL   &kp QMARK  &kp DQT    &kp COLON  &kp EQUAL
                 &kp RPAR   &kp RBKT  &kp RBRC  &kp STAR  &kp AMPS    &kp TILDE  &kp GRAVE  &kp SQT    &kp SEMI   &kp CARET
-                &none  &trans                                        &none  &none
+                &trans  &none                                       &none  &none
             >;
         };
 
@@ -100,7 +101,7 @@
                 &none  &kp RET  &kp BSPC   &kp DEL   &none    &none          &kp N1  &kp N2  &kp N3  &none
                 &none  &none    &kp MINUS  &kp FSLH  &none    &num_word NUM  &kp N4  &kp N5  &kp N6  &kp N0
                 &none  &none    &kp PLUS   &kp STAR  &none    &none          &kp N7  &kp N8  &kp N9  &none
-                &none  &trans                                 &trans  &kp K_CANCEL
+                &trans  &none                                 &trans  &kp K_CANCEL
             >;
         };
 
