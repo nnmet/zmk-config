@@ -75,9 +75,9 @@
 
         ext {
             bindings = <
-                &alt_tab   &kp RET    &kp BSPC   &kp DEL    &none        &none  &kp PG_DN    &kp HOME    &kp END  &kp PG_UP
-                &sk LSHFT  &sk LCTRL  &sk LCMD   &sk LALT   &kp TAB      &none  &kp LEFT     &kp DOWN    &kp UP   &kp RIGHT
-                &kp LC(Z)  &kp LC(A)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &none  &key_repeat  &caps_word  &none    &none
+                &alt_tab   &kp RET    &kp BSPC   &kp DEL    &none        &none       &kp PG_DN    &kp HOME  &kp END  &kp PG_UP
+                &sk LSHFT  &sk LCTRL  &sk LCMD   &sk LALT   &kp TAB      &caps_word  &kp LEFT     &kp DOWN  &kp UP   &kp RIGHT
+                &kp LC(Z)  &kp LC(A)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &none       &key_repeat  &none     &none    m&none
                 &trans  &none                                            &none  &trans
             >;
         };
